@@ -9,8 +9,15 @@ import styles from './styles';
 export default function EsqueceuSenha1({ navigation }) {
   const [email, setEmail] = useState('');
 
+  // // Adicionando logs para depuração
+  // console.log('Componente EsqueceuSenha1 carregado');
+  // console.log('Valor inicial do email:', email);
+
   // Função para lidar com o pressionamento do botão 'Redefinir'
   const handleRedefinirPress = () => {
+    console.log('Botão Redefinir pressionado'); // Verifique se a função está sendo chamada
+    console.log('Email:', email); // Verifique o valor do email
+
     // Verifique se o email não está vazio
     if (email.trim() === '') {
       Alert.alert('Atenção', 'Por favor, digite seu e-mail.');
@@ -18,8 +25,6 @@ export default function EsqueceuSenha1({ navigation }) {
     }
 
     // Simular envio do email (pode ser substituído pela lógica real)
-    // Aqui você pode verificar se o email já foi enviado anteriormente
-    // e então exibir o alerta e navegar para a próxima tela.
     const emailEnviado = true; // Exemplo: email já enviado
 
     if (emailEnviado) {
@@ -35,7 +40,6 @@ export default function EsqueceuSenha1({ navigation }) {
       );
     } else {
       // Lógica para enviar o e-mail real aqui
-      // Neste exemplo, apenas navegamos para a próxima tela
       navigation.navigate('esqueceuSenha2');
     }
   };
