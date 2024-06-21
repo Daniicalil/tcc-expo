@@ -24,12 +24,16 @@ const Stack = createNativeStackNavigator();
 export default function Navegacao() {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Login">
+            <Stack.Navigator 
+             screenOptions={{
+                headerShown: false // Aqui é onde você desativa o cabeçalho
+              }}
+            initialRouteName="Login">
                 <Stack.Screen name="login" component={Login} />
-                <Stack.Screen name="Home" component={NavegacaoDrawer} />
                 <Stack.Screen name="signUp" component={SignUp} />
                 <Stack.Screen name="esqueceuSenha1" component={EsqueceuSenha1} />
                 <Stack.Screen name="esqueceuSenha2" component={EsqueceuSenha2} />
+                <Stack.Screen name="Home" component={NavegacaoDrawer} />
                 <Stack.Screen name="telaInicial" component={TelaInicial} />
                 <Stack.Screen name="perfil" component={Perfil} />
                 <Stack.Screen name="recomendacao" component={Recomendacao} />

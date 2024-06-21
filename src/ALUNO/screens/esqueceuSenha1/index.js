@@ -28,7 +28,7 @@ export default function EsqueceuSenha1({ navigation }) {
       />
 
       <Pressable 
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => navigation.navigate('login')}
             style={
               ({pressed}) => pressed ?
                 [styles.touchText, styles.TouchPress]
@@ -40,7 +40,7 @@ export default function EsqueceuSenha1({ navigation }) {
       </Pressable>
 
       <Pressable 
-        onPress={() => navigation.navigate('EsqueceuSenha2')} 
+        onPress={() => navigation.navigate('esqueceuSenha2')} 
         style={
           ({pressed}) => pressed ?
             [styles.redefinirButton, styles.btnPress]

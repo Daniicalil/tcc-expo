@@ -18,7 +18,10 @@ import 'react-native-gesture-handler';
 
 
 import Navegacao from './src/ALUNO/rotas/stackNavigation';
+import { AppRegistry } from 'react-native';
 // import Navegacao from './src/PROFESSOR/rotas';
+
+
 
 export default function App() {
   return (
