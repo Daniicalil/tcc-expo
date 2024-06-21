@@ -7,6 +7,7 @@ import EsqueceuSenha1 from '../screens/esqueceuSenha1';
 import EsqueceuSenha2 from '../screens/esqueceuSenha2';
 import TelaInicial from '../screens/telaInicial';
 import Perfil from '../screens/perfil';
+import PerfilEditar from '../screens/perfilEditar';
 import Recomendacao from '../screens/recomendacao';
 import InfoLivroRecomendacao from '../screens/infoLivroRecomendacao';
 import Biblioteca from '../screens/biblioteca';
@@ -36,6 +37,7 @@ export default function Navegacao() {
                 <Stack.Screen name="Home" component={NavegacaoDrawer} />
                 <Stack.Screen name="telaInicial" component={TelaInicial} />
                 <Stack.Screen name="perfil" component={Perfil} />
+                <Stack.Screen name="perfilEditar" component={PerfilEditar} />
                 <Stack.Screen name="recomendacao" component={Recomendacao} />
                 <Stack.Screen name="infolivrorecomendacao" component={InfoLivroRecomendacao} />
                 <Stack.Screen name="biblioteca" component={Biblioteca} />

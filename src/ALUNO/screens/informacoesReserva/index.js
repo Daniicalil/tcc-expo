@@ -52,7 +52,6 @@ return (
               </Text>
             <View style={styles.buttonsReserva}>
               <Pressable 
-                onPress={() => navigation.navigate('Login')} 
                 style={
                   ({pressed}) => pressed ?
                     [styles.buttonConf, styles.btnConfPress]

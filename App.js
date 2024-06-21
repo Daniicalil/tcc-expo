@@ -7,6 +7,7 @@ import 'react-native-gesture-handler';
 // import EsqueceuSenha2 from './src/ALUNO/screens/esqueceuSenha2';
 // import TelaInicial from './src/ALUNO/screens/telaInicial';
 // import Perfil from './src/ALUNO/screens/perfil';
+// import PerfilEditar from './src/ALUNO/screens/perfilEditar';
 // import Recomendacao from './src/ALUNO/screens/recomendacao';
 // import InfoLivroRecomendacao from './src/ALUNO/screens/infoLivroRecomendacao';
 // import Biblioteca from './src/ALUNO/screens/biblioteca';
@@ -18,7 +19,6 @@ import 'react-native-gesture-handler';
 
 
 import Navegacao from './src/ALUNO/rotas/stackNavigation';
-import { AppRegistry } from 'react-native';
 // import Navegacao from './src/PROFESSOR/rotas';
 
 
