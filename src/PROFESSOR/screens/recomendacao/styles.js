@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
 const styles = StyleSheet.create({
   retangGreen: {
@@ -28,10 +28,29 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF735C',
     marginBottom: '3%',
   },
+  titleContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 60,
+  },
+  icon: {
+    position: 'absolute',
+    left: 28,
+    top: 10
+  },
+  paragraph: {
+    marginTop: '3%',
+    marginBottom: '6%',
+    // fontWeight: 'bold',
+    fontSize: 18,
+    flex: 1,
+    textAlign: 'center'
+  },
   barraPesq: {
     backgroundColor: '#DAD7D7',
     width: '80%',
-    marginBottom: '2%',
+    marginBottom: '4%',
     alignSelf: 'center',
   },
   placeholderStyle: {
@@ -40,30 +59,10 @@ const styles = StyleSheet.create({
   iconStyle: {
     opacity: 0.5, 
   },
-  funcionamento: {
-    width: '90%', 
-    height: 180, 
-    borderRadius: 10,
-    backgroundColor: '#3F7263',
-    marginTop: '3%',
-    alignSelf: 'center',
-  },
-  imgFunc: {
-    width: '90%',
-    height: '100%',
-    alignSelf: 'center',
-  },
-  paragraph: {
-    marginTop: 20,
-    marginBottom: 7,
-    fontSize: 18,
-    textAlign: 'left',
-    marginLeft: '8%',
-  },
   item: {
-    width: '31.6%', 
+    width: '31.2%', 
     alignItems: 'center',
-    margin: 3, 
+    margin: '1%', 
     backgroundColor: '#fff',
     borderRadius: 8,
     shadowColor: '#000',
@@ -103,28 +102,31 @@ const styles = StyleSheet.create({
   },
   flatListContainer: {
     justifyContent: 'center',
+    paddingHorizontal: 8,
   },
   scrollViewContainer: {
     backgroundColor: '#fff',
   },
-  importancia: {
-    width: '90%', 
-    height: 180, 
-    borderRadius: 10,
+  buttonAdd: {
     backgroundColor: '#3F7263',
-    marginTop: '5%',
-    alignSelf: 'center',
-    marginBottom: '10%',
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    paddingVertical: 6,
+    paddingHorizontal: 16,
+    borderRadius: 30,
+    width: '26%',
+    alignSelf: 'flex-end',
+    marginRight: 20,
   },
-  imgImportancia: {
-    width: '90%',
-    height: '100%',
+  btnAddPress: {
+    opacity: 0.5,
+  },
+  buttonTextAdd: {
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
   containerAny: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#fff'
   }
 });
 

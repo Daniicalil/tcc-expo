@@ -2,14 +2,14 @@ import * as React from 'react';
 import { FlatList, View } from 'react-native';
 
 import styles from './styles';
-import Principal from './principal';
 import BookList from './booklist';
+import Principal from './principal';
 
-export default function Biblioteca({ navigation }) {
+export default function Recomendacao({ navigation }) {
   const renderItem = ({ item }) => {
     switch (item.type) {
       case 'principal':
-        return <Principal  voltar={navigation}/>;
+        return <Principal voltar={navigation}/>;
       case 'booklist':
         return <BookList />;
       default:
@@ -31,4 +31,5 @@ export default function Biblioteca({ navigation }) {
       />
     </View>
   );
-}
+};
+

@@ -52,7 +52,7 @@ export default function PerfilEditar({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.inicio}>
-        <StatusBar backgroundColor='#3F7263' transLucent={false} />
+        {/* <StatusBar backgroundColor='#3F7263' transLucent={false} /> */}
         <RetangGreen />
         <RetangOrange />
         <View style={styles.titlePagina}>
@@ -79,7 +79,7 @@ export default function PerfilEditar({ navigation }) {
       <Text style={styles.texto}>RM:</Text>
       <TextInput 
         style={styles.input} 
-        disabled={true}
+        editable={false}
       />
       <Text style={styles.texto}>Nome social:</Text>
       <TextInput 
@@ -88,7 +88,7 @@ export default function PerfilEditar({ navigation }) {
       <Text style={styles.texto}>Nome completo:</Text>
       <TextInput 
         style={styles.input} 
-        disabled={true}
+        editable={false}
       />
 
       <Text style={styles.texto}>E-mail:</Text>
