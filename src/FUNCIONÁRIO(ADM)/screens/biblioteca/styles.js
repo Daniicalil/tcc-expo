@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   retangGreen: {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     // fontWeight: 'bold',
     fontSize: 18,
     flex: 1,
-    textAlign: 'center'
+    marginLeft: 70,
   },
   barraPesq: {
     backgroundColor: '#DAD7D7',
@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
   },
   item: {
     width: '31.2%', 
-    alignContent: 'center',
     alignItems: 'center',
     margin: '1%', 
     backgroundColor: '#fff',
@@ -72,12 +71,6 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
     elevation: 3,
   },
-  course: {
-    marginTop: 10,
-    fontSize: 12,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
   image: {
     marginTop: 6,
     width: 60, 
@@ -85,10 +78,9 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginBottom: 6,
     resizeMode: 'cover', 
-    alignItems: 'center',
     alignSelf: 'center',
-    justifyContent: 'center'
   },
+  
   titleBook: {
     fontSize: 13,
     fontWeight: 'bold',
@@ -108,6 +100,27 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   scrollViewContainer: {
+    backgroundColor: '#fff',
+  },
+  buttonAdd: {
+    backgroundColor: '#3F7263',
+    paddingVertical: 6,
+    paddingHorizontal: 16,
+    borderRadius: 30,
+    width: '26%',
+    alignSelf: 'flex-end',
+    marginRight: 20,
+  },
+  btnAddPress: {
+    opacity: 0.5,
+  },
+  buttonTextAdd: {
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  containerAny: {
+    flex: 1,
     backgroundColor: '#fff',
   },
 });

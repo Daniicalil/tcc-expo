@@ -1,6 +1,12 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
+const { width } = Dimensions.get('window');
+
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
   retangGreen: {
     width: '100%', 
     height: 100, 
@@ -28,7 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF735C',
     marginBottom: '3%',
   },
-  titleContainer: {
+  titlePagina: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -45,38 +51,19 @@ const styles = StyleSheet.create({
     // fontWeight: 'bold',
     fontSize: 18,
     flex: 1,
-    textAlign: 'center'
+    left: 70
   },
-  barraPesq: {
-    backgroundColor: '#DAD7D7',
-    width: '80%',
-    marginBottom: '4%',
-    alignSelf: 'center',
-  },
-  placeholderStyle: {
-    opacity: 0.5, 
-  },
-  iconStyle: {
-    opacity: 0.5, 
-  },
-  item: {
-    width: '31.2%', 
-    alignContent: 'center',
-    alignItems: 'center',
-    margin: '1%', 
-    backgroundColor: '#fff',
+  pickerContainer: {
+    width: '85%',
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: '#000',
     borderRadius: 8,
-    shadowColor: '#000',
-    shadowOpacity: 0.5,
-    shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 8,
-    elevation: 3,
+    alignSelf: 'center'
   },
-  course: {
-    marginTop: 10,
-    fontSize: 12,
-    fontWeight: 'bold',
-    textAlign: 'center',
+  textPicker: {
+    fontSize: 16,
+    left: 36,
   },
   image: {
     marginTop: 6,
@@ -85,31 +72,31 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginBottom: 6,
     resizeMode: 'cover', 
-    alignItems: 'center',
+  },
+  button: {
+    backgroundColor: '#FF735C',
+    paddingVertical: 12,
+    paddingHorizontal: 28,
+    borderRadius: 30,
+    marginTop: 16,
+    width: '35%',
     alignSelf: 'center',
-    justifyContent: 'center'
   },
-  titleBook: {
-    fontSize: 13,
-    fontWeight: 'bold',
+  btnPress: {
+    backgroundColor: '#3F7263',
+  },
+  buttonText: {
     textAlign: 'center',
+    color: '#fff',
+    fontSize: 16,
   },
-  author: {
-    fontSize: 11.5,
-    color: '#555',
-    textAlign: 'center',
-    marginBottom: 10,
-  },
-  flatList: {
-    flex: 1, 
-  },
-  flatListContainer: {
-    justifyContent: 'center',
-    paddingHorizontal: 8,
-  },
-  scrollViewContainer: {
-    backgroundColor: '#fff',
-  },
+  // viewEditar: {
+  //   width: '100%', 
+  //   alignItems: 'flex-end', 
+  //   paddingRight: 20, 
+  //   paddingBottom: 10,
+  //   flex: 1,
+  // },
 });
 
 export default styles;

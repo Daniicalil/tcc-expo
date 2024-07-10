@@ -61,7 +61,6 @@ const styles = StyleSheet.create({
   },
   item: {
     width: '31.2%', 
-    alignContent: 'center',
     alignItems: 'center',
     margin: '1%', 
     backgroundColor: '#fff',
@@ -85,9 +84,7 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginBottom: 6,
     resizeMode: 'cover', 
-    alignItems: 'center',
     alignSelf: 'center',
-    justifyContent: 'center'
   },
   titleBook: {
     fontSize: 13,
@@ -110,6 +107,27 @@ const styles = StyleSheet.create({
   scrollViewContainer: {
     backgroundColor: '#fff',
   },
+  buttonAdd: {
+    backgroundColor: '#3F7263',
+    paddingVertical: 6,
+    paddingHorizontal: 16,
+    borderRadius: 30,
+    width: '26%',
+    alignSelf: 'flex-end',
+    marginRight: 20,
+  },
+  btnAddPress: {
+    opacity: 0.5,
+  },
+  buttonTextAdd: {
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  containerAny: {
+    flex: 1,
+    backgroundColor: '#fff'
+  }
 });
 
 export default styles;

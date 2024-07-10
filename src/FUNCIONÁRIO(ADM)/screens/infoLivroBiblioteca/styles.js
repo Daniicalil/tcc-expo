@@ -5,7 +5,7 @@ const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
   inicio: {
     alignItems: 'center',
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     height: '30%',
     alignSelf: 'center',
     position: 'absolute',
-    bottom: 8,
+    bottom: 8
   },
   imgEtec: {
     width: '15%',
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF735C',
     marginBottom: '3%',
   },
-  title: {
+  titlePagina: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
@@ -51,9 +51,10 @@ const styles = StyleSheet.create({
   paragraph: {
     marginTop: '3%',
     marginBottom: '6%',
+    // fontWeight: 'bold',
     fontSize: 18,
     flex: 1,
-    left: 70,
+    left: 70
   },
   buttonRem: {
     backgroundColor: '#FF735C',
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    marginBottom: 10,
+    marginBottom: 20,
     marginHorizontal: 20,
     flex: 1,
     width: width * 0.9, // 90% da largura da tela
@@ -166,30 +167,12 @@ const styles = StyleSheet.create({
     width: 40,
     height: 35,
   },
-  recommendationTitle: {
-    fontSize: 14,
-    marginBottom: 4,
-    marginTop: 5,
-  },
-  recommendation: {
-    fontSize: 14,
-    marginBottom: 10,
-  },
-  recommendationMod: {
-    fontSize: 14,
-    marginBottom: 4,
-  },
-  RadioButtonQuad: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    marginTop: 5,
-  },
   button: {
     backgroundColor: '#FF735C',
     paddingVertical: 12,
     paddingHorizontal: 28,
     borderRadius: 30,
-    marginTop: 10,
+    marginTop: 16,
     marginBottom: 10,
   },
   btnPress: {
