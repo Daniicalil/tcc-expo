@@ -5,15 +5,19 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   background: {
-    width: '100%',
-    height: '100%',
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
   },
   contentContainer: {
-    flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
   },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: 'center',
+  },
   logo: {
+    marginTop: 50,
     width: 300,
     height: 300,
   },
@@ -53,27 +57,38 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  seletores: {
+  radioOptions: {
+    marginTop: 4,
     flexDirection: 'row',
+  },
+  radioOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 4,
+  },
+  radioText: {
+    marginRight: 8,
+    fontSize: 16,
   },
   touchText: {
     color: '#FF735C',
     textAlign: 'center',
     fontSize: 12,
-    marginBottom: 7,
-    marginTop: 15,
+    marginBottom: 5,
+    marginTop: 10,
   },
   TouchPress: {
     opacity: 0.5,
   },
   signUpButton: {
-    marginTop: '3%',
+    marginTop: 10,
     backgroundColor: '#FF735C',
     width: '35%',
     height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
+    marginBottom: 20,
   },
   btnPress: {
     opacity: 0.5,
