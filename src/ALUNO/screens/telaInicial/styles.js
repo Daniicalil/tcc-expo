@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8
@@ -29,15 +29,15 @@ const styles = StyleSheet.create({
     marginBottom: '3%',
   },
   barraPesq: {
-    backgroundColor: '#DAD7D7',
-    width: '80%',
+    backgroundColor: '#FFF',
+    width: '85%',
     marginBottom: '2%',
     alignSelf: 'center',
+    borderWidth: 1,
+    borderColor: '#CCC',
+
   },
   placeholderStyle: {
-    opacity: 0.5, 
-  },
-  iconStyle: {
     opacity: 0.5, 
   },
   funcionamento: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   course: {
     marginTop: 10,
     fontSize: 12,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     textAlign: 'center',
   },
   image: {

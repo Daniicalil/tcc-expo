@@ -31,14 +31,18 @@ const styles = StyleSheet.create({
   input: {
     width: '65%',
     height: 42,
-    backgroundColor: '#DAD7D7',
+    backgroundColor: '#FFF',
     marginBottom: 10,
     paddingLeft: 15,
     padding: 8,
     borderRadius: 15,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
+    borderColor: '#CCC',
     color: '#929292',
+  },
+  inputError: {
+    borderColor: 'red',
+    borderWidth: 1,
   },
   password: {
     flexDirection: 'row',
@@ -83,19 +87,24 @@ const styles = StyleSheet.create({
   signUpButton: {
     marginTop: 10,
     backgroundColor: '#FF735C',
-    width: '35%',
+    width: '38%',
     height: 42,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
     marginBottom: 20,
   },
+  errorText: {
+    color: 'red',
+    marginBottom: 8,
+    marginTop: -6,
+  },
   btnPress: {
     opacity: 0.5,
   },
   signUpText: {
     color: '#fff',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     fontSize: 16,
   },
 })

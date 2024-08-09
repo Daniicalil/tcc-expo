@@ -3,11 +3,13 @@ import { StyleSheet, Dimensions } from 'react-native';
 const styles = StyleSheet.create({
   container: {    
     flex: 1,
+    backgroundColor: '#FFF'
   },
   background: {
     flex: 1,
     justifyContent: 'center',
     resizeMode: 'cover',
+    backgroundColor: '#FFF'
   },
   contentContainer: {
     alignItems: 'center',
@@ -31,13 +33,13 @@ const styles = StyleSheet.create({
   input: {
     width: '65%',
     height: 42,
-    backgroundColor: '#DAD7D7',
+    backgroundColor: '#FFF',
     marginBottom: 10,
     paddingLeft: 15,
     padding: 8,
-    borderRadius: 15,
+    borderRadius: 30,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
+    borderColor: '#CCC',
     color: '#929292',
   },
   inputError: {
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
   loginButton: {
     marginTop: 10,
     backgroundColor: '#FF735C',
-    width: '35%',
+    width: '32%',
     height: 42,
     justifyContent: 'center',
     alignItems: 'center',
@@ -79,7 +81,7 @@ const styles = StyleSheet.create({
   },
   loginText: {
     color: '#fff',
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
     fontSize: 16,
   },
   errorText: {
