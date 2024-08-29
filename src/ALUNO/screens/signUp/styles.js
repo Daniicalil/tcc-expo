@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {   
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   radioText: {
-    marginRight: 8,
-    fontSize: 16,
+    marginRight: 0,
+    fontSize: 14,
   },
   touchText: {
     color: '#FF735C',

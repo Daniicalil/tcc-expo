@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8
@@ -51,14 +51,27 @@ const styles = StyleSheet.create({
   paragraph: {
     marginTop: '3%',
     marginBottom: '6%',
-    // fontWeight: 'bold',
     fontSize: 18,
     flex: 1,
     left: 70
   },
+  barraPesq: {
+    backgroundColor: '#FFF',
+    width: '85%',
+    marginBottom: '2%',
+    alignSelf: 'center',
+    borderWidth: 1,
+    borderColor: '#CCC',
+    marginBottom: 20,
+  },
+  placeholderStyle: {
+    opacity: 0.5, 
+  },
+  iconStyle: {
+    opacity: 0.5, 
+  },
   lineSquare: {
     width: '90%',
-    height: 410,
     backgroundColor: 'transparent', 
     borderColor: 'black', 
     borderWidth: 1, 
@@ -68,10 +81,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   capaLivros: {
-    top: 25,
-    width: 45,
-    height: 70,
+    top: 20,
+    width: 55,
+    height: 80,
     left: 35,
+    borderRadius: 4,
   },
   sectionTitle: {
     top: 40,
@@ -103,7 +117,7 @@ const styles = StyleSheet.create({
     top: 50,
     textAlign: 'justify',
     width: '89%',
-    left: 35,
+    left: 25,
   },
   reservado: {
     paddingTop: 5,
@@ -116,6 +130,15 @@ const styles = StyleSheet.create({
   periodoReserva: {
     paddingTop: 5,
     paddingBottom: 18,
+  },
+  avisoDevolucao: {
+    color: '#FF735C',
+    marginBottom: 15,
+    display: 'flex',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    width: '100%',
+    margin: 0,
   },
   conf: {
     paddingTop: 55,
@@ -189,6 +212,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
     textAlign: 'justify',
     fontSize: 12,
+    marginBottom: 10,
   },
 });
 

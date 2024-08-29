@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8
@@ -37,6 +37,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF735C',
     marginBottom: '3%',
   },
+  barraPesq: {
+    backgroundColor: '#FFF',
+    width: '85%',
+    marginBottom: '4%',
+    alignSelf: 'center',
+    borderWidth: 1,
+    borderColor: '#CCC',
+  },
+  placeholderStyle: {
+    opacity: 0.5, 
+  },
   titlePagina: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -51,7 +62,6 @@ const styles = StyleSheet.create({
   paragraph: {
     marginTop: '3%',
     marginBottom: '6%',
-    // fontWeight: 'bold',
     fontSize: 18,
     flex: 1,
     left: 70
@@ -69,10 +79,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   capaLivros: {
-    top: 25,
-    width: 45,
-    height: 70,
+    top: 20,
+    width: 55,
+    height: 80,
     left: 35,
+    borderRadius: 4,
   },
   sectionTitle: {
     top: 40,

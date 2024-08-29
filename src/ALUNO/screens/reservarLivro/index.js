@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, Alert, StatusBar, Pressable } from 'react-native';
 import { Calendar, LocaleConfig } from 'react-native-calendars';
-import { RetangGreen, RetangOrange } from './forms';
+import { RetangGreen, RetangOrange } from '../../componentes/forms';
 import { FontAwesome } from '@expo/vector-icons';
 
 import styles from './styles';
@@ -53,19 +53,39 @@ export default function ReservarLivro({ navigation }) {
     setMarkedDates(markedDates);
   };
 
-  // Obter a data de hoje
   const hoje = new Date().toISOString().split('T')[0];
+
+  const handleFinalizarReserva = () => {
+    if (startDate && endDate) {
+      Alert.alert(
+        'Confirmar Reserva',
+        `Você deseja reservar de ${formatarData(startDate)} até ${formatarData(endDate)}?`,
+        [
+          {
+            text: 'Cancelar',
+            style: 'cancel'
+          },
+          {
+            text: 'OK',
+            onPress: () => {
+              navigation.navigate('informacoesreserva', { startDate, endDate });
+            }
+          }
+        ]
+      );
+    } else {
+      Alert.alert('Erro', 'Por favor, selecione uma data de início e término.');
+    }
+  };
 
   return (
     <ScrollView style={styles.container}>
       <View style={styles.inicio}>
-      <StatusBar backgroundColor='#3F7263' transLucent={false} />
         <StatusBar backgroundColor='#3F7263' transLucent={false} />
         <RetangGreen />
         <RetangOrange />
-
         <View style={styles.titlePagina}>
-          <FontAwesome name="angle-left" size={30} color="black" style={styles.icon} onPress={() => navigation.goBack()}/>
+          <FontAwesome name="angle-left" size={30} color="black" style={styles.icon} onPress={() => navigation.goBack()} />
           <Text style={styles.paragraph}>Reservar livro</Text>
         </View>
       </View>
@@ -81,6 +101,11 @@ export default function ReservarLivro({ navigation }) {
             [startDate ? startDate : '']: { selected: true, marked: true, selectedColor: '#FF735C' },
             [endDate ? endDate : '']: { selected: true, marked: true, selectedColor: '#FF735C' }
           }}
+          theme={{
+            todayTextColor: '#FF735C',
+            arrowColor: '#FF735C',
+            monthTextColor: '#FF735C',
+          }}
         />
         <View style={styles.datePickerContainer}>
           <Text>Reservar de:</Text>
@@ -94,24 +119,13 @@ export default function ReservarLivro({ navigation }) {
             {formatarData(endDate)}
           </Text>
         </View>
-        <Pressable 
-          style={
-            ({pressed}) => pressed ?
-              [styles.button, styles.btnPress]
-            :
-              styles.button
-            }   
-          onPress={() => {
-          if (startDate && endDate) {
-            Alert.alert('Livro reservado com sucesso!', `Reserva de: ${formatarData(startDate)} até ${formatarData(endDate)}`);
-          } else {
-            Alert.alert('Erro', 'Por favor, selecione uma data de início e término.');
-          }
-        }}>
+        <Pressable
+          style={({ pressed }) => pressed ? [styles.button, styles.btnPress] : styles.button}
+          onPress={handleFinalizarReserva}
+        >
           <Text style={styles.buttonText}>Finalizar reserva</Text>
         </Pressable>
       </View>
     </ScrollView>
   );
-};
-
+}

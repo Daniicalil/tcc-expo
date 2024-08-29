@@ -5,7 +5,7 @@ const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
   },
   inicio: {
     alignItems: 'center',
@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8
@@ -37,6 +37,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF735C',
     marginBottom: '3%',
   },
+  barraPesq: {
+    backgroundColor: '#FFF',
+    width: '85%',
+    marginBottom: '4%',
+    alignSelf: 'center',
+    borderWidth: 1,
+    borderColor: '#CCC',
+  },
+  placeholderStyle: {
+    opacity: 0.5, 
+  },
   titlePagina: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -51,7 +62,6 @@ const styles = StyleSheet.create({
   paragraph: {
     marginTop: '3%',
     marginBottom: '6%',
-    // fontWeight: 'bold',
     fontSize: 18,
     flex: 1,
     left: 70
@@ -140,7 +150,7 @@ const styles = StyleSheet.create({
     opacity: 0.5,
   },
   buttonTextConfSel: {
-    color: '#fff',
+    color: '#FFF',
     textAlign: 'center',
   },
   confirmation: {
@@ -155,13 +165,27 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   pickerContainer: {
-    width: '40%',
+    width: '50%',
     marginTop: 10,
     borderWidth: 1,
-    borderColor: '#000',
+    borderColor: '#CCC',
+    backgroundColor: '#FFF',
     borderRadius: 8,
     alignSelf: 'center',
   },
+  pickerFocused: {
+    borderWidth: 1,
+    borderColor: '#FF735C'
+  },
+  pickerUnfocused: {
+    borderWidth: 1,
+    borderColor: '#CCC',
+  },
+  // pickerContainer:hover,
+  // pickerContainer:focus {
+  //   borderColor: '#FF735C',
+  //   outline: none,
+  // },
   errorMessage: {
     color: 'red',
     marginBottom: 8,

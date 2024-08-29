@@ -1,4 +1,4 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   retangGreen: {
@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8
@@ -28,6 +28,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF735C',
     marginBottom: '3%',
   },
+  container: {
+    backgroundColor: 'white',
+    flex: 1,
+  },
   titleContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -42,16 +46,17 @@ const styles = StyleSheet.create({
   paragraph: {
     marginTop: '3%',
     marginBottom: '6%',
-    // fontWeight: 'bold',
     fontSize: 18,
     flex: 1,
-    textAlign: 'center'
+    left: 70
   },
   barraPesq: {
-    backgroundColor: '#DAD7D7',
-    width: '80%',
-    marginBottom: '4%',
+    backgroundColor: '#FFF',
+    width: '85%',
+    marginBottom: '2%',
     alignSelf: 'center',
+    borderWidth: 1,
+    borderColor: '#CCC',
   },
   placeholderStyle: {
     opacity: 0.5, 
@@ -75,7 +80,6 @@ const styles = StyleSheet.create({
   course: {
     marginTop: 10,
     fontSize: 12,
-    fontWeight: 'bold',
     textAlign: 'center',
   },
   image: {
@@ -108,6 +112,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   scrollViewContainer: {
+    backgroundColor: '#FFF',
+  },
+  containerAny: {
+    flex: 1,
     backgroundColor: '#fff',
   },
 });

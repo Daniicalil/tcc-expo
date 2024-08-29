@@ -1,4 +1,3 @@
-import { CgEnter } from 'react-icons/cg';
 import { StyleSheet, Dimensions } from 'react-native';
 
 const { width } = Dimensions.get('window');
@@ -6,11 +5,8 @@ const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
   },
-  // inicio: {
-  //   alignItems: 'center',
-  // },
   retangGreen: {
     width: '100%', 
     height: 100, 
@@ -18,8 +14,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8
@@ -62,7 +58,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#000',
     borderRadius: 8,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    backgroundColor: '#FFF',
   },
   textPicker: {
     fontSize: 16,
@@ -72,7 +69,7 @@ const styles = StyleSheet.create({
     height: 200, // Altura do TextInput
     width: '85%',
     borderRadius: 8,
-    borderColor: '#000',
+    borderColor: '#CCC',
     borderWidth: 1,
     padding: 10,
     textAlignVertical: 'top', // Alinha o texto no topo

@@ -1,40 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
-import * as React from 'react';
-import { useState } from 'react';
-import { View, Text, TextInput, Pressable, Image, StyleSheet, Alert } from 'react-native';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
+import { View, Text, TextInput, Pressable, Alert } from 'react-native';
 import { RadioButton, Avatar } from 'react-native-paper';
-import { Ionicons, FontAwesome } from '@expo/vector-icons';
-import { RetangGreen, RetangOrange } from './forms';
+import { FontAwesome } from '@expo/vector-icons';
+import { RetangGreen, RetangOrange } from '../../componentes/forms';
 import { Entypo } from '@expo/vector-icons';
+import * as ImagePicker from 'expo-image-picker';
 
 import styles from './styles';
 
-import FotoPadraoPerfil from '../../../../assets/imagens_telas/perfil.png';
-import IconeEditar from '../../../../assets/imagens_telas/editar_perfil.png';
-
-import { launchImageLibrary } from 'react-native-image-picker';
+import defaultProfileImage from '../../../../assets/imagens_telas/perfil.jpg'; // Imagem padrão
 
 export default function PerfilEditar({ navigation }) {
   const [value, setValue] = useState('first');
   const [email, setEmail] = useState('');
-  const [profilePhoto, setProfilePhoto] = useState(FotoPadraoPerfil);
+  const [image, setImage] = useState(defaultProfileImage);
 
-  const handleImagePicker = () => {
-    launchImageLibrary(
-      { mediaType: 'photo', quality: 1 },
-      (response) => {
-        if (response.didCancel) {
-          console.log('User cancelled image picker');
-        } else if (response.error) {
-          console.log('ImagePicker Error: ', response.error);
-        } else if (response.assets && response.assets.length > 0) {
-          const source = { uri: response.assets[0].uri };
-          setProfilePhoto(source);
-        }
-      }
-    );
-  };
-
+  // Função para salvar as alterações
   const handleSave = () => {
     Alert.alert(
       'Perfil Atualizado',
@@ -42,10 +24,90 @@ export default function PerfilEditar({ navigation }) {
       [
         {
           text: 'OK',
-          onPress: () => navigation.navigate('perfil') // Substitua 'NovaTela' pelo nome da tela que você deseja navegar
+          onPress: () => navigation.replace('perfil')
         }
       ],
       { cancelable: false }
+    );
+  };
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      title: 'Editar Perfil',
+      headerLeft: () => (
+        <FontAwesome 
+          name="angle-left" 
+          size={30} 
+          color="black" 
+          style={styles.icon} 
+          onPress={() => navigation.goBack()} 
+        />
+      ),
+      headerRight: () => (
+        <Pressable 
+          onPress={handleSave} 
+          style={({ pressed }) => pressed ? [styles.botaoSalvar, styles.btnPress] : styles.botaoSalvar}
+        >
+          <Text style={styles.salvarText}>Salvar</Text>
+        </Pressable>
+      ),
+    });
+  }, [navigation, handleSave]);
+
+  useEffect(() => {
+    (async () => {
+      // Solicitar permissões para acessar a galeria de imagens
+      const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
+        alert('Desculpe, precisamos de permissões para acessar a galeria!');
+      }
+    })();
+  }, []);
+  
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [1, 1],
+      quality: 1,
+    });
+  
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+    }
+  };
+  
+  const takePhoto = async () => {
+    let result = await ImagePicker.launchCameraAsync({
+      allowsEditing: true,
+      aspect: [1, 1],
+      quality: 1,
+    });
+  
+    if (!result.canceled) {
+      setImage(result.assets[0].uri);
+    }
+  };
+  
+  const handleImagePick = () => {
+    Alert.alert(
+      "Selecionar Imagem",
+      "Escolha uma opção",
+      [
+        {
+          text: "Escolher da Galeria",
+          onPress: pickImage,
+        },
+        {
+          text: "Tirar Foto",
+          onPress: takePhoto,
+        },
+        {
+          text: "Cancelar",
+          style: "cancel"
+        }
+      ],
+      { cancelable: true }
     );
   };
 
@@ -55,25 +117,29 @@ export default function PerfilEditar({ navigation }) {
         {/* <StatusBar backgroundColor='#3F7263' transLucent={false} /> */}
         <RetangGreen />
         <RetangOrange />
-        <View style={styles.titlePagina}>
-          <FontAwesome name="angle-left" size={30} color="black" style={styles.icon} onPress={() => navigation.goBack()} />
-          <Text style={styles.paragraph}>Editar Perfil</Text>
-        </View>
+          <View style={styles.titlePagina}>
+            <FontAwesome name="angle-left" size={30} color="black" style={styles.icon} onPress={() => navigation.goBack()} />
+              <Text style={styles.paragraph}>Editar Perfil</Text>
+          </View>
       </View>
 
       <View style={styles.fotoContainer}>
-        <Avatar.Image size={120} color="#3F7263" source={profilePhoto} style={styles.fotoPadraoPerfil} />
+        <Avatar.Image 
+          size={120} 
+          color="#3F7263" 
+          source={typeof image === 'string' ? { uri: image } : image} 
+          style={styles.fotoPadraoPerfil} 
+        />
         <Pressable 
-            onPress={handleImagePicker}
-            style={
-              ({pressed}) => pressed ?
-                [styles.iconeEditarContainer, styles.iconeFotoPress]
-              :
-                styles.iconeEditarContainer
-              }  
-          >
-            <Entypo name="camera" size={22} color="black" />
-          </Pressable>
+          onPress={handleImagePick}
+          style={
+            ({ pressed }) => pressed 
+              ? [styles.iconeEditarContainer, styles.iconeFotoPress]
+              : styles.iconeEditarContainer
+          }  
+        >
+          <Entypo name="camera" size={22} color="black" />
+        </Pressable>
       </View>
 
       <Text style={styles.texto}>RM:</Text>
@@ -90,7 +156,6 @@ export default function PerfilEditar({ navigation }) {
         style={styles.input} 
         editable={false}
       />
-
       <Text style={styles.texto}>E-mail:</Text>
       <TextInput
         style={styles.input}
@@ -102,15 +167,28 @@ export default function PerfilEditar({ navigation }) {
         <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
           <Text style={styles.sexo}>Sexo:</Text>
           <View style={styles.seletores}>
-            <Text><RadioButton value="Feminino" color='#3F7263' />Feminino</Text>
-            <Text><RadioButton value="Masculino" color='#3F7263' />Masculino</Text>
-            <Text><RadioButton value="Neutro" color='#3F7263' />Neutro</Text>
+            <View style={styles.radioOption}>
+              <RadioButton value="Feminino" color='#FF735C' />
+              <Text style={styles.radioLabel}>Feminino</Text>
+            </View>
+            <View style={styles.radioOption}>
+              <RadioButton value="Masculino" color='#FF735C' />
+              <Text style={styles.radioLabel}>Masculino</Text>
+            </View>
+            <View style={styles.radioOption}>
+              <RadioButton value="Neutro" color='#FF735C' />
+              <Text style={styles.radioLabel}>Neutro</Text>
+            </View>
+            <View style={styles.radioOption}>
+              <RadioButton value="Padrão" color='#FF735C' />
+              <Text style={styles.radioLabel}>Padrão</Text>
+            </View>
           </View>
         </RadioButton.Group>
       </View>
 
       <Pressable
-        onPress={() => navigation.navigate('esqueceuSenha1')}
+        onPress={() => navigation.replace('esqueceuSenha1')}
         style={({ pressed }) => pressed ? [styles.touchText, styles.TouchPress] : styles.touchText}
       >
         <Text style={styles.touchText}>Esqueceu a senha?</Text>

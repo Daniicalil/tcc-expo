@@ -8,8 +8,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8
@@ -42,16 +42,17 @@ const styles = StyleSheet.create({
   paragraph: {
     marginTop: '3%',
     marginBottom: '6%',
-    // fontWeight: 'bold',
     fontSize: 18,
     flex: 1,
-    marginLeft: 70,
+    left: 70
   },
   barraPesq: {
-    backgroundColor: '#DAD7D7',
-    width: '80%',
-    marginBottom: '4%',
+    backgroundColor: '#FFF',
+    width: '85%',
+    marginBottom: '2%',
     alignSelf: 'center',
+    borderWidth: 1,
+    borderColor: '#CCC',
   },
   placeholderStyle: {
     opacity: 0.5, 
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     shadowColor: '#000',
     shadowOpacity: 0.5,
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 20, height: 2 },
     shadowRadius: 8,
     elevation: 3,
   },

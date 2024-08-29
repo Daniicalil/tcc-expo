@@ -1,6 +1,4 @@
-import { CgEnter } from 'react-icons/cg';
 import { StyleSheet, Dimensions } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
 
 const { width } = Dimensions.get('window');
 
@@ -19,8 +17,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8
@@ -110,6 +108,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 28,
     borderRadius: 30,
     marginTop: 16,
+    marginBottom: 20,
     width: '35%',
     alignSelf: 'center',
   },
@@ -128,13 +127,11 @@ const styles = StyleSheet.create({
   },
   lineSquareImg: {
     backgroundColor: 'transparent',
-    borderColor: 'black',
+    borderColor: '#FFF',
     borderWidth: 1,
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 20,
-    marginBottom: 20,
-    marginHorizontal: 20,
     flex: 1,
     width: width * 0.85, // 85% da largura da tela
     alignItems: 'center',

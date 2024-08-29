@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
   }, 
   inicio: {
     alignItems: 'center',
@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8
@@ -49,32 +49,41 @@ const styles = StyleSheet.create({
   paragraph: {
     marginTop: '3%',
     marginBottom: '6%',
-    // fontWeight: 'bold',
     fontSize: 18,
     flex: 1,
     left: 70
   },
   fotoPadraoPerfil: {
-    backgroundColor: '#3F7263',
+    backgroundColor: '#FFF',
     alignSelf: 'center',
-    paddingBottom: '5'
+    paddingBottom: '5',
+    borderColor: '#CCC',
+    borderWidth: 1,
+    objectFit: 'cover',
+    width: 'auto',
+    height: 'auto',
   },
   texto: {
-    marginLeft: 90, 
+    marginLeft: 70, 
   },
   input: {
-    width: '65%',
+    width: '75%',
     height: 42,
-    backgroundColor: '#DAD7D7',
+    backgroundColor: '#FFF',
     marginTop: 2,
     marginBottom: 10,
     paddingLeft: 15,
     padding: 8,
-    borderRadius: 15,
+    borderRadius: 30,
     borderWidth: 1,
-    borderColor: '#e0e0e0',
-    color: '#929292',
+    borderColor: '#CCC',
+    color: '#000',
     alignSelf: 'center',
+  },
+  radioButton: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   // passwordContainer: {
   //   flexDirection: 'row',
@@ -92,6 +101,20 @@ const styles = StyleSheet.create({
   },
   seletores: {
     flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
+  radioOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  radioLabel: {
+    marginLeft: 0,
+    fontSize: 14,
+  },
+  RadioButton: {
+    display: 'flex',
+    alignItems: 'center',
   },
   touchText: {
     color: '#FF735C',

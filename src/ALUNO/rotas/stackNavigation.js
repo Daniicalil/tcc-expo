@@ -14,7 +14,7 @@ import Biblioteca from '../screens/biblioteca';
 import InfoLivroBiblioteca from '../screens/infoLivroBiblioteca';
 import ReservarLivro from '../screens/reservarLivro';
 import InformacoesReserva from '../screens/informacoesReserva';
-import Notificacoes from '../screens/notificacoes';
+import Notificacoes from '../descarte/notificacoes';
 import InformacoesContato from '../screens/infoContato';
 import SobreNos from '../screens/sobreNos';
 
@@ -29,24 +29,25 @@ export default function Navegacao() {
              screenOptions={{
                 headerShown: false // Aqui é onde você desativa o cabeçalho
               }}
-                initialRouteName="Login">
-                <Stack.Screen name="login" component={Login} />
-                <Stack.Screen name="signUp" component={SignUp} />
-                <Stack.Screen name="esqueceuSenha1" component={EsqueceuSenha1} />
-                <Stack.Screen name="esqueceuSenha2" component={EsqueceuSenha2} />
-                <Stack.Screen name="Home" component={NavegacaoDrawer} />
-                <Stack.Screen name="telaInicial" component={TelaInicial} />
-                <Stack.Screen name="perfil" component={Perfil} />
-                <Stack.Screen name="perfilEditar" component={PerfilEditar} />
-                <Stack.Screen name="recomendacao" component={Recomendacao} />
-                <Stack.Screen name="infolivrorecomendacao" component={InfoLivroRecomendacao} />
-                <Stack.Screen name="biblioteca" component={Biblioteca} />
-                <Stack.Screen name="infolivrobiblioteca" component={InfoLivroBiblioteca} />
-                <Stack.Screen name="reservarlivro" component={ReservarLivro} />
-                <Stack.Screen name="informacoesreserva" component={InformacoesReserva} />
-                <Stack.Screen name="notificacoes" component={Notificacoes} />
-                <Stack.Screen name="informacoescontato" component={InformacoesContato} />
-                <Stack.Screen name="sobrenos" component={SobreNos} />
+                initialRouteName="login">
+                    <Stack.Screen name="login" component={Login} />
+                    <Stack.Screen name="signUp" component={SignUp} />
+                    <Stack.Screen name="esqueceuSenha1" component={EsqueceuSenha1} />
+                    <Stack.Screen name="esqueceuSenha2" component={EsqueceuSenha2} />
+                    <Stack.Screen name="Home" component={NavegacaoDrawer} />
+{/* 
+                    <Stack.Screen name="telaInicial" component={TelaInicial} /> 
+                    <Stack.Screen name="perfil" component={Perfil} />
+                    <Stack.Screen name="perfilEditar" component={PerfilEditar} />
+                    <Stack.Screen name="recomendacao" component={Recomendacao} />
+                    <Stack.Screen name="infolivrorecomendacao" component={InfoLivroRecomendacao} />
+                    <Stack.Screen name="biblioteca" component={Biblioteca} />
+                    <Stack.Screen name="infolivrobiblioteca" component={InfoLivroBiblioteca} />
+                    <Stack.Screen name="reservarlivro" component={ReservarLivro} />
+                    <Stack.Screen name="informacoesreserva" component={InformacoesReserva} />
+                    <Stack.Screen name="notificacoes" component={Notificacoes} />
+                    <Stack.Screen name="informacoescontato" component={InformacoesContato} />
+                    <Stack.Screen name="sobrenos" component={SobreNos} /> */}
             </Stack.Navigator>
         </NavigationContainer>
     );

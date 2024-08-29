@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   imgLogo: {
-    width: '20%',
-    height: '30%',
+    width: '12%',
+    height: '42%',
     alignSelf: 'center',
     position: 'absolute',
     bottom: 8,
@@ -46,18 +46,18 @@ const styles = StyleSheet.create({
   icon: {
     position: 'absolute',
     left: 28,
-    top: 10,
+    top: 10
   },
   paragraph: {
     marginTop: '3%',
     marginBottom: '6%',
     fontSize: 18,
     flex: 1,
-    left: 70,
+    left: 70
   },
   buttonRem: {
     backgroundColor: '#FF735C',
-    paddingVertical: 6,
+    paddingVertical: 10,
     paddingHorizontal: 16,
     borderRadius: 30,
     width: '26%',
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     width: 100,
     height: 160,
     alignSelf: 'center',
+    borderRadius: 4,
   },
   line: {
     borderBottomColor: 'black',
@@ -98,9 +99,10 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     opacity: 0.2,
     marginVertical: 10,
+    marginTop: 10,
   },
   sectionTitle: {
-    marginTop: 10,
+    marginTop: 0,
   },
   general: {
     fontSize: 18,

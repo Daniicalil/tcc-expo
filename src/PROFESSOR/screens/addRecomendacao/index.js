@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StatusBar, ScrollView, View, Text, TextInput, Pressable, Alert } from 'react-native';
+import { View, Text, TextInput, Pressable, Alert } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { Picker } from '@react-native-picker/picker';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import { RetangGreen, RetangOrange } from './forms';
+import { RetangGreen, RetangOrange } from '../../../ALUNO/componentes/forms';
 import styles from './styles';
 
 export default function AddRecomendacao({ navigation }) {
@@ -76,87 +76,86 @@ export default function AddRecomendacao({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor='#3F7263' translucent={false} />
-      <RetangGreen />
-      <RetangOrange />
+      {/* <StatusBar backgroundColor='#3F7263' translucent={false} /> */}
+        <RetangGreen />
+        <RetangOrange />
+          <View style={styles.titlePagina}>
+            <FontAwesome name="angle-left" size={30} color="black" style={styles.icon} onPress={() => navigation.goBack()} />
+              <Text style={styles.paragraph}>Adicionar recomendação</Text>
+          </View>
 
-      <View style={styles.titlePagina}>
-        <FontAwesome name="angle-left" size={30} color="black" style={styles.icon} onPress={() => navigation.goBack()} />
-        <Text style={styles.paragraph}>Adicionar recomendação</Text>
-      </View>
+          <Text style={styles.textPicker}>Curso recomendado:</Text>
+          <View style={styles.pickerContainer}>
+            <Picker
+              selectedValue={selectedCurso}
+              style={styles.picker}
+              onValueChange={(itemValue) => setSelectedCurso(itemValue)}
+            >
+              {cursos.map((curso) => (
+                <Picker.Item
+                  key={curso.value}
+                  label={curso.label}
+                  value={curso.value}
+                />
+              ))}
+                </Picker>
+          </View>
 
-      <Text style={styles.textPicker}>Curso recomendado:</Text>
-      <View style={styles.pickerContainer}>
-        <Picker
-          selectedValue={selectedCurso}
-          style={styles.picker}
-          onValueChange={(itemValue) => setSelectedCurso(itemValue)}
-        >
-          {cursos.map((curso) => (
-            <Picker.Item
-              key={curso.value}
-              label={curso.label}
-              value={curso.value}
+          <Text style={styles.textPicker}>Livro recomendado:</Text>
+          <View style={styles.pickerContainer}>
+            <Picker
+              selectedValue={selectedLivro}
+              style={styles.picker}
+              onValueChange={(itemValue) => setSelectedLivro(itemValue)}
+            >
+              {livros.map((livro) => (
+                <Picker.Item
+                  key={livro.value}
+                  label={livro.label}
+                  value={livro.value}
+                />
+              ))}
+            </Picker>
+          </View>
+
+          <Text style={styles.textPicker}>Descrição do professor:</Text>
+          <TextInput
+            style={styles.input}
+            value={description}
+            multiline
+            onChangeText={setDescription}
+          />
+
+          <Text style={styles.recommendationMod}>Recomendado para:</Text>
+          <View style={styles.RadioButtonQuad}>
+            <SquareRadioButton
+              label="1º Mod."
+              checked={selectedMode === "1stMod"}
+              onPress={() => handleModeChange("1stMod")}
             />
-          ))}
-        </Picker>
-      </View>
-
-      <Text style={styles.textPicker}>Livro recomendado:</Text>
-      <View style={styles.pickerContainer}>
-        <Picker
-          selectedValue={selectedLivro}
-          style={styles.picker}
-          onValueChange={(itemValue) => setSelectedLivro(itemValue)}
-        >
-          {livros.map((livro) => (
-            <Picker.Item
-              key={livro.value}
-              label={livro.label}
-              value={livro.value}
+            <SquareRadioButton
+              label="2º Mod."
+              checked={selectedMode === "2ndMod"}
+              onPress={() => handleModeChange("2ndMod")}
             />
-          ))}
-        </Picker>
-      </View>
+            <SquareRadioButton
+              label="3º Mod."
+              checked={selectedMode === "3rdMod"}
+              onPress={() => handleModeChange("3rdMod")}
+            />
+            <SquareRadioButton
+              label="4º Mod."
+              checked={selectedMode === "4thMod"}
+              onPress={() => handleModeChange("4thMod")}
+            />
+          </View>
 
-      <Text style={styles.textPicker}>Descrição do professor:</Text>
-      <TextInput
-        style={styles.input}
-        value={description}
-        multiline
-        onChangeText={setDescription}
-      />
-
-      <Text style={styles.recommendationMod}>Recomendado para:</Text>
-      <View style={styles.RadioButtonQuad}>
-        <SquareRadioButton
-          label="1º Mod."
-          checked={selectedMode === "1stMod"}
-          onPress={() => handleModeChange("1stMod")}
-        />
-        <SquareRadioButton
-          label="2º Mod."
-          checked={selectedMode === "2ndMod"}
-          onPress={() => handleModeChange("2ndMod")}
-        />
-        <SquareRadioButton
-          label="3º Mod."
-          checked={selectedMode === "3rdMod"}
-          onPress={() => handleModeChange("3rdMod")}
-        />
-        <SquareRadioButton
-          label="4º Mod."
-          checked={selectedMode === "4thMod"}
-          onPress={() => handleModeChange("4thMod")}
-        />
-      </View>
-
-      <Pressable
-        style={({ pressed }) => pressed ? [styles.button, styles.btnPress] : styles.button}
-        onPress={handleAddRecommendation}
-      >
-        <Text style={styles.buttonText}>Adicionar</Text>
-      </Pressable>
+          <Pressable
+            style={({ pressed }) => pressed ? [styles.button, styles.btnPress] : styles.button}
+            onPress={handleAddRecommendation}
+          >
+            <Text style={styles.buttonText}>Adicionar</Text>
+          </Pressable>
     </View>
   );
 }
